@@ -12,7 +12,11 @@
   "dependencies": {
     "express": "^4.18.2",
     "mysql": "^2.18.1",
+<<<<<<< HEAD
     "sql": "^0.78.0"
+=======
+    "mysql2": "^3.3.5"
+>>>>>>> e55ebd9bcc4a97ec99362b70668b8618e314d3ef
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
