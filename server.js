@@ -1,7 +1,17 @@
 const express = require("express");
+const bodyParse = require("body-parser")
 const app = express();
 const pool =require("./db")
 const PORT  = 7000 | process.env.PORT
+
+
+app.use(express.json())
+app.use(bodyParse.urlencoded({
+    extended:true
+}))
+const userLogin = require("./Routes/userLoginAndSignup");
+
+app.use("/api/userLogin",userLogin);
 
 app.get("/", (req, res) => {
   // let sql1=`drop table users`;

@@ -5,9 +5,10 @@ const login = async (req,res)=>{
         const email = req.body.email;
         const password = req.body.password;
 
-        DB.query("select * from users where email = email",(err,result)=>{
+        DB.query(`select * from users where user_email = '${email}'`,(err,result)=>{
+            console.log(result)
             if (result && result.length > 0) {
-                const databasePassword = result[0].password;
+                const databasePassword = result[0].user_password;
                 if(password==databasePassword){
                     res.status(200).json({
                         error : false,
@@ -34,13 +35,14 @@ const login = async (req,res)=>{
 
 const signUp = async (req,res)=>{
     try {
+        console.log("okkkkkkkkk")
         const userName = req.body.name;
         const userEmail = req.body.email;
         const userPassword = req.body.password;
         const userPhone = req.body.phone;
 
         const query = `INSERT INTO users (user_email,user_name, user_password, phone_number) VALUES 
-                                        (${userEmail}, ${userName},${userPassword},${userPhone})`;
+                                        ('${userEmail}', '${userName}','${userPassword}','${userPhone}')`;
 
         DB.query(query, (err, result) => {
         if (err) {
@@ -54,6 +56,7 @@ const signUp = async (req,res)=>{
                 // Handle other database errors
                 res.status(500).json({ 
                     error : true,
+                    err : err,
                     message: "Database error" 
                 });
             }
