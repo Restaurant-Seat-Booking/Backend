@@ -15,11 +15,7 @@ pool.getConnection((err, connection) => {
   }
   
   console.log("Connected to the database");
-
-  pool.query("select * from users", (err,res)=>{
-    if(err) throw err
-    console.log(res)
-  })
+  
 
   connection.release(); // Release the connection back to the pool
 });
