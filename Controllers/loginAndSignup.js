@@ -6,7 +6,7 @@ const login = async (req,res)=>{
         const password = req.body.password;
 
         DB.query(`select * from users where user_email = '${email}'`,(err,result)=>{
-            console.log(result)
+            // console.log(result)
             if (result && result.length > 0) {
                 const databasePassword = result[0].user_password;
                 if(password==databasePassword){
