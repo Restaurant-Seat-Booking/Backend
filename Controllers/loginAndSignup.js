@@ -23,7 +23,7 @@ const login = async (req,res)=>{
             }else {
                 res.json({ 
                     error : true ,
-                    message: "No data found." 
+                    message: "User does not exit Please signup." 
                 });
             }
         })
