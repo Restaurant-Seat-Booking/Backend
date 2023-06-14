@@ -27,7 +27,6 @@ const login = async (req,res)=>{
                 });
             }
         })
-
     } catch (error) {
         res.Status(404).json({message : "server error"});
     }
