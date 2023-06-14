@@ -35,7 +35,7 @@ const login = async (req,res)=>{
 
 const signUp = async (req,res)=>{
     try {
-        const userName = req.body.name;
+        const userName = req.body.username;
         const userEmail = req.body.email;
         const userPassword = req.body.password;
         const userPhone = req.body.phone;

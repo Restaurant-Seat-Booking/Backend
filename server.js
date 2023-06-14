@@ -21,21 +21,7 @@ const userLogin = require("./Routes/userLoginAndSignup");
 
 app.use("/api/userLogin",userLogin);
 
-// app.get("/", (req, res) => {
-  // let sql1=`drop table users`;
-  // let sql = `CREATE TABLE users (
-  //   user_email VARCHAR(40) NOT NULL PRIMARY KEY,
-  //   user_name VARCHAR(30) NOT NULL,
-  //   user_password VARCHAR(30) NOT NULL,
-  //   phone_number VARCHAR(15)
-  // )`;
 
-  // pool.query(sql,(err,result)=>{
-  //   if(err) {throw err};
-  //   console.log("created users table")
-  // })
-  
-// });
 
 
 app.listen(PORT,(err)=>{
