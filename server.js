@@ -3,7 +3,7 @@ const app = express();
 const pool =require("./db")
 const PORT  = 7000 | process.env.PORT
 
-app.get("/", (req, res) => {
+// app.get("/", (req, res) => {
   // let sql1=`drop table users`;
   // let sql = `CREATE TABLE users (
   //   user_email VARCHAR(40) NOT NULL PRIMARY KEY,
@@ -12,12 +12,12 @@ app.get("/", (req, res) => {
   //   phone_number VARCHAR(15)
   // )`;
 
-  pool.query(sql,(err,result)=>{
-    if(err) {throw err};
-    console.log("created users table")
-  })
+  // pool.query(sql,(err,result)=>{
+  //   if(err) {throw err};
+  //   console.log("created users table")
+  // })
   
-});
+// });
 
 
 app.listen(PORT,(err)=>{
