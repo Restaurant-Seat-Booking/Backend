@@ -45,4 +45,36 @@ const getprofile = async (req, res) => {
   }
 };
 
-module.exports = getprofile;
+const getprofileupdate = async(req,res)=>{
+
+    try {
+        const email = req.body.email;
+        const phonenumber = req.body.phone;
+        const name = req.body.username;
+        
+        DB.query(`UPDATE users
+        SET user_name = '${name}', user_email = '${email}', phone_number = '${phonenumber}'
+        WHERE user_email = '${email}';
+        `, (error, result)=>{
+            // console.log(e)
+            if(error){
+                res.status(400).json({
+                    error : true,
+                    message : "database error",
+                })
+            }else{
+                res.status(200).json({
+                    error : false,
+                    message : "updated successfully"
+                })
+            }
+        })
+    } catch (error) {
+        res.status(404).json({
+            error : true,
+            message : "server error"
+        })
+    }
+}
+
+module.exports = {getprofile,getprofileupdate};
