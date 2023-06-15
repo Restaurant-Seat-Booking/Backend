@@ -15,7 +15,14 @@ pool.getConnection((err, connection) => {
   }
   
   console.log("Connected to the database");
-  
+  // let sql=`INSERT INTO orders (date, restaurant_name, location, total_spent, user_email, restaurant_id, items) 
+  // VALUES ('2023-06-14 3:14PM', 'apna Restaurant', 'ramgard', 80, 'vedprakash@gmail.com', 3, 'bakre ka l**d');
+  // `
+
+  // pool.query(sql,(err)=>{
+  //   if(err) throw err
+  //   console.log("inseted into orders")
+  // })
 
   connection.release(); // Release the connection back to the pool
 });
