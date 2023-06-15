@@ -4,7 +4,7 @@ const DB = require("../db");
 const getorders = async(req,res)=>{
     try {
         const email = req.body.email;
-        console.log(email)
+        // console.log(email)
         DB.query(`select * from orders where user_email = '${email}'`, (error, result)=>{
             // console.log(e)
             if(error){

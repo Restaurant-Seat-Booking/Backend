@@ -38,7 +38,7 @@ const signUp = async (req,res)=>{
         const userEmail = req.body.email;
         const userPassword = req.body.password;
         const userPhone = req.body.phone;
-        console.log(req.body)
+        // console.log(req.body)
 
         const query = `INSERT INTO users (user_email,user_name, user_password, phone_number) VALUES 
                                         ('${userEmail}', '${userName}','${userPassword}','${userPhone}')`;
