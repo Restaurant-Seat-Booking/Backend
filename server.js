@@ -19,9 +19,11 @@ app.use(bodyParse.urlencoded({
 }))
 const userLogin = require("./Routes/userLoginAndSignup");
 const order = require("./Routes/orders")
+const profile = require("./Routes/profile")
 
 app.use("/api/userLogin",userLogin);
 app.use("/api/order",order)
+app.use("/api/profile",profile)
 
 
 
