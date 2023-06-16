@@ -12,7 +12,7 @@ app.use((req, res, next) => {
   next();
 });
 
-
+app.use(bodyParse.json());
 app.use(express.json())
 app.use(bodyParse.urlencoded({
     extended:true
