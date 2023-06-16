@@ -1,3 +1,4 @@
+const { json } = require("body-parser");
 const mysql = require("mysql");
 
 const pool = mysql.createPool({
@@ -21,6 +22,7 @@ pool.getConnection((err, connection) => {
     '2:00 PM': 13,
     '4:00 PM': 14
   }];
+
   const feat = [
     {
       icon: 'fa fa-motorcycle fa-4x',
@@ -72,6 +74,8 @@ pool.getConnection((err, connection) => {
     },
   ];
 
+  // const jsonopt = JSON.stringify(opt);
+  // const jsonclt = JSON.stringify(clt);
   const jsonav = JSON.stringify(av);
   const jsonfeat = JSON.stringify(feat);
   const jsonitm = JSON.stringify(itm);
