@@ -2,7 +2,6 @@ const DB = require("../db");
 
 const getRestaurantByName = async (req, res) => {
     try {
-
     } catch (error) {
 
     }
@@ -39,6 +38,7 @@ const getRestaurantByLocation = async (req, res) => {
             }
         })
         
+        console.log(req.body)
     } catch (error) {
         res.status(404).json({
             error: true,
@@ -48,4 +48,6 @@ const getRestaurantByLocation = async (req, res) => {
     }
 };
 
-module.exports = { getRestaurantByName, getRestaurantByLocation }
+
+
+module.exports = {getRestaurantByName , getRestaurantByLocation}
