@@ -23,23 +23,23 @@ pool.getConnection((err, connection) => {
   //   '4:00 PM': 14
   // }];
 
-  const feat = [
-    {
-      icon: 'fa fa-motorcycle fa-4x',
-      title: 'Home Delivery',
-      description: 'Enjoy the convenience of home delivery service.',
-    },
-    {
-      icon: 'fa fa-smoking fa-4x',
-      title: 'Smoking Area',
-      description: 'Designated smoking area available for smokers.',
-    },
-    {
-      icon: 'fa fa-snowflake fa-4x',
-      title: 'Air Condition',
-      description: 'Relax and dine in a comfortable air-conditioned environment.',
-    }
-  ];
+  // const feat = [
+  //   {
+  //     icon: 'fa fa-motorcycle fa-4x',
+  //     title: 'Home Delivery',
+  //     description: 'Enjoy the convenience of home delivery service.',
+  //   },
+  //   {
+  //     icon: 'fa fa-smoking fa-4x',
+  //     title: 'Smoking Area',
+  //     description: 'Designated smoking area available for smokers.',
+  //   },
+  //   {
+  //     icon: 'fa fa-snowflake fa-4x',
+  //     title: 'Air Condition',
+  //     description: 'Relax and dine in a comfortable air-conditioned environment.',
+  //   }
+  // ];
 
   // const itm = [
   //   {
@@ -65,15 +65,13 @@ pool.getConnection((err, connection) => {
   //   { url: './images/food3.jpg', alt: 'Image 3' },
   // ];
 
-  // const jsonopt = JSON.stringify(opt);
-  // const jsonclt = JSON.stringify(clt);
   // const jsonav = JSON.stringify(av);
-  const jsonfeat = JSON.stringify(feat);
+  // const jsonfeat = JSON.stringify(feat);
   // const jsonitm = JSON.stringify(itm);
   // const jsonimg = JSON.stringify(img);
 
-  // let sql = `INSERT INTO restaurant (restaurant_name, opening_time, closing_time, available_seats, address, longitude, latitude, about_us, features, items, image)
-  // VALUES ('Assems', '10:40AM', '08:30PM', '${jsonav}', 'nehru hall of residence', 28.121, 30.14145, 'bohot bahiyaad hotel', '${jsonfeat}', '${jsonitm}', '${jsonimg}');
+  // let sql = `INSERT INTO restaurant (restaurant_name, opening_time, closing_time, available_seats, address, latiude, longitude, about_us, features, items, image)
+  // VALUES ('LLRKharagpur', '10:40AM', '08:30PM', '${jsonav}', 'nehru hall of residence', 22.3214, 87.3028, 'bohot bahiyaad hotel', '${jsonfeat}', '${jsonitm}', '${jsonimg}');
   // `
 
 
