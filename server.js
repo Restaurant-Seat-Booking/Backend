@@ -21,11 +21,13 @@ const userLogin = require("./Routes/userLoginAndSignup");
 const order = require("./Routes/orders")
 const about = require("./Routes/Res_about")
 const profile = require("./Routes/profile")
+const search = require("./Routes/serach")
 
 app.use("/api/userLogin",userLogin);
 app.use("/api/order",order)
 app.use("/api/about",about)
 app.use("/api/profile",profile)
+app.use("/api/search",search)
 
 
 
