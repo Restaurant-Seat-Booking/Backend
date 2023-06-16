@@ -16,30 +16,30 @@ pool.getConnection((err, connection) => {
   }
   console.log("Connected to the database");
 
-  const av = [{
-    '10:00 AM': 0,
-    '12:00 PM': 12,
-    '2:00 PM': 13,
-    '4:00 PM': 14
-  }];
+  // const av = [{
+  //   '10:00 AM': 0,
+  //   '12:00 PM': 12,
+  //   '2:00 PM': 13,
+  //   '4:00 PM': 14
+  // }];
 
-  const feat = [
-    {
-      icon: 'fa fa-motorcycle fa-4x',
-      title: 'Home Delivery',
-      description: 'Enjoy the convenience of home delivery service.',
-    },
-    {
-      icon: 'fa fa-smoking fa-4x',
-      title: 'Smoking Area',
-      description: 'Designated smoking area available for smokers.',
-    },
-    {
-      icon: 'fa fa-snowflake fa-4x',
-      title: 'Air Condition',
-      description: 'Relax and dine in a comfortable air-conditioned environment.',
-    }
-  ];
+  // const feat = [
+  //   {
+  //     icon: 'fa fa-motorcycle fa-4x',
+  //     title: 'Home Delivery',
+  //     description: 'Enjoy the convenience of home delivery service.',
+  //   },
+  //   {
+  //     icon: 'fa fa-smoking fa-4x',
+  //     title: 'Smoking Area',
+  //     description: 'Designated smoking area available for smokers.',
+  //   },
+  //   {
+  //     icon: 'fa fa-snowflake fa-4x',
+  //     title: 'Air Condition',
+  //     description: 'Relax and dine in a comfortable air-conditioned environment.',
+  //   }
+  // ];
 
   const itm = [
     {
@@ -59,31 +59,38 @@ pool.getConnection((err, connection) => {
     }
   ];
 
-  const img = [
-    {
-      image_id : 1,
-      url : "NIL"
-    },
-    {
-      image_id : 2,
-      url : "NIL"
-    },
-    {
-      image_id : 3,
-      url : "NIL"
-    },
-  ];
+  // const img = [
+  //   {
+  //     image_id : 1,
+  //     url : "NIL"
+  //   },
+  //   {
+  //     image_id : 2,
+  //     url : "NIL"
+  //   },
+  //   {
+  //     image_id : 3,
+  //     url : "NIL"
+  //   },
+  // ];
 
   // const jsonopt = JSON.stringify(opt);
   // const jsonclt = JSON.stringify(clt);
-  const jsonav = JSON.stringify(av);
-  const jsonfeat = JSON.stringify(feat);
+  // const jsonav = JSON.stringify(av);
+  // const jsonfeat = JSON.stringify(feat);
   const jsonitm = JSON.stringify(itm);
-  const jsonimg = JSON.stringify(img);
+  // const jsonimg = JSON.stringify(img);
 
   // let sql = `INSERT INTO restaurant (restaurant_name, opening_time, closing_time, available_seats, address, longitude, latitude, about_us, features, items, image)
   // VALUES ('Assems', '10:40AM', '08:30PM', '${jsonav}', 'nehru hall of residence', 28.121, 30.14145, 'bohot bahiyaad hotel', '${jsonfeat}', '${jsonitm}', '${jsonimg}');
   // `
+
+  
+  // let sql = `UPDATE restaurant
+  //          SET items = '${jsonitm}'
+  //          WHERE restaurant_id = 3;
+  //         `;
+
 
 
   // let sql = `CREATE TABLE restaurant (

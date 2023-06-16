@@ -69,6 +69,7 @@ const getaboutupdate = async (req, res) => {
     });
   }
 };
+
 const getfeatureupdate = async (req, res) => {
   try {
     const feat = req.body.featur;
@@ -102,4 +103,36 @@ const getfeatureupdate = async (req, res) => {
   }
 };
 
-module.exports = {getabout,getaboutupdate,getfeatureupdate};
+const getitemupdate = async (req, res) => {
+  try {
+    const items = req.body.item;
+    const jsonitems = JSON.stringify(items);
+    console.log(jsonitems)
+
+  
+    DB.query(
+      `UPDATE restaurant
+      SET items = '${jsonitems}'
+      WHERE restaurant_id = 3;`,
+      (error, result) => {
+        if (error) {
+          res.status(400).json({
+            error: true,
+            message: "database error",
+          });
+        } else {
+          res.status(200).json({
+            error: false,
+            message: "updated successfully",
+          });
+        }
+      }
+    );
+  } catch (error) {
+    res.status(404).json({
+      error: true,
+      message: "server error",
+    });
+  }
+};
+module.exports = {getabout,getaboutupdate,getfeatureupdate,getitemupdate};
