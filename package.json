@@ -7,13 +7,17 @@
     "start": "nodemon server.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "proxy": "http://localhost:3000",
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
+    "hbs": "^4.2.0",
     "mysql": "^2.18.1",
-    "mysql2": "^3.3.5"
+    "mysql2": "^3.3.5",
+    "stripe": "^12.9.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
