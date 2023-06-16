@@ -27,6 +27,18 @@ const getorders = async(req,res)=>{
     }
 }
 
+const placeOrder = async(req, res)=>{
+  try {
+    res.status(200).json({
+      error : false
+    })
+  } catch (error) {
+    res.status(200).json({
+      error : true
+    })
+  }
+}
 
 
-module.exports = getorders;
+
+module.exports = {getorders,placeOrder};
