@@ -8,13 +8,13 @@ const getRestaurantByName = async (req, res) => {
 }
 
 const getRestaurantByLocation = async (req, res) => {
-    const latitude = req.body.latiude;
-    const longitude = req.body.longitude;
-    const radius = 20;
+    const latitude = req.body.lat;
+    const longitude = req.body.lng;
+    const radius = 500;
     console.log({latitude,longitude});
     try {
         const qery = `
-        SELECT restaurant_name, latiude, longitude,
+        SELECT restaurant_name, latiude, longitude, address, restaurant_id,opening_time,closing_time,
           (6371 * acos(cos(radians(${latitude})) * cos(radians(latiude)) * cos(radians(longitude) - radians(${longitude})) + sin(radians(${latitude})) * sin(radians(latiude))))
           AS distance
         FROM restaurant
@@ -30,7 +30,7 @@ const getRestaurantByLocation = async (req, res) => {
                     message: "database error",
                 })
             } else {
-                console.log(result);
+                // console.log(result);
                 res.status(200).json({
                     error: false,
                     data: result
