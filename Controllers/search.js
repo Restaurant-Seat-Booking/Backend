@@ -2,6 +2,23 @@ const DB = require("../db");
 
 const getRestaurantByName = async (req, res) => {
     try {
+        const query = req.body.query;
+        
+        DB.query(`SELECT * FROM restaurant WHERE restaurant_name LIKE '%${query}%'`, (error, result)=>{
+            // console.log(e)
+            if(error){
+                res.status(400).json({
+                    error : true,
+                    message : "database error",
+                })
+            }else{
+                console.log(result)
+                res.status(200).json({
+                    error : false,
+                    data : result
+                })
+            }
+        })
     } catch (error) {
 
     }
