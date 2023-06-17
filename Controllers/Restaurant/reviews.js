@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const getreview = async (req, res) => {
   try {
     const email = req.body.email;
-    const restaurantid = 3; // req.body.restaurantid;
+    const restaurantid = req.body.restaurantid;
     // console.log(email)
     DB.query(`SELECT * FROM reviews WHERE restaurant_id = '${restaurantid}'`, (error, result) => {
       if (error) {
