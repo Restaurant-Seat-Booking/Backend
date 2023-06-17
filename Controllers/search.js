@@ -28,7 +28,7 @@ const getRestaurantByLocation = async (req, res) => {
     const latitude = req.body.lat;
     const longitude = req.body.lng;
     const radius = 500;
-    console.log({latitude,longitude});
+    // console.log({latitude,longitude});
     try {
         const qery = `
         SELECT restaurant_name, latiude, longitude, address, restaurant_id,opening_time,closing_time,
@@ -55,7 +55,7 @@ const getRestaurantByLocation = async (req, res) => {
             }
         })
         
-        console.log(req.body)
+        // console.log(req.body)
         
     } catch (error) {
         res.status(404).json({
@@ -65,7 +65,4 @@ const getRestaurantByLocation = async (req, res) => {
         })
     }
 };
-
-
-
 module.exports = {getRestaurantByName , getRestaurantByLocation}

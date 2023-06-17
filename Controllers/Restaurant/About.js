@@ -3,10 +3,8 @@ const bodyParser = require('body-parser');
 
 const getabout = async (req, res) => {
   try {
-    const email = req.body.email;
-    const restaurantid = 3;
-    // console.log(email)
-    DB.query(`SELECT * FROM restaurant WHERE restaurant_id = '${restaurantid}'`, (error, result) => {
+    const restaurant_id = req.body.restaurant_id;
+    DB.query(`SELECT * FROM restaurant WHERE restaurant_id = '${restaurant_id}'`, (error, result) => {
       if (error) {
         res.status(400).json({
           error: true,
@@ -35,18 +33,16 @@ const getabout = async (req, res) => {
     })
   }
 }
-
-
 const getaboutupdate = async (req, res) => {
   try {
     const aboutus = req.body.abouttext;
-    console.log(aboutus)
-
+    const restaurant_id = req.body.restaurant_id;
+    // console.log(aboutus)
 
     DB.query(
       `UPDATE restaurant
       SET about_us = '${aboutus}'
-      WHERE restaurant_id = 3;`,
+      WHERE restaurant_id = '${restaurant_id}';`,
       (error, result) => {
         if (error) {
           res.status(400).json({
@@ -73,13 +69,14 @@ const getfeatureupdate = async (req, res) => {
   try {
     const feat = req.body.featur;
     const jsonfeat = JSON.stringify(feat);
+    restaurant_id = req.body.restaurant_id;
     // console.log(jsonfeat)
 
 
     DB.query(
       `UPDATE restaurant
       SET features = '${jsonfeat}'
-      WHERE restaurant_id = 3;`,
+      WHERE restaurant_id = '${restaurant_id}';`,
       (error, result) => {
         if (error) {
           res.status(400).json({
@@ -106,13 +103,14 @@ const getitemupdate = async (req, res) => {
   try {
     const items = req.body.item;
     const jsonitems = JSON.stringify(items);
+    const restaurant_id = req.body.restaurant_id;
     // console.log(jsonitems)
 
 
     DB.query(
       `UPDATE restaurant
       SET items = '${jsonitems}'
-      WHERE restaurant_id = 3;`,
+      WHERE restaurant_id = '${restaurant_id}';`,
       (error, result) => {
         if (error) {
           res.status(400).json({
@@ -139,13 +137,14 @@ const getitemupdate = async (req, res) => {
     try {
       const images = req.body.image;
       const jsonimages = JSON.stringify(images);
+      const restaurant_id = req.body.restaurant_id;
       // console.log(jsonitems)
 
 
       DB.query(
         `UPDATE restaurant
         SET image = '${jsonimages}'
-        WHERE restaurant_id = 3;`,
+        WHERE restaurant_id = '${restaurant_id}';`,
         (error, result) => {
           if (error) {
             res.status(400).json({
