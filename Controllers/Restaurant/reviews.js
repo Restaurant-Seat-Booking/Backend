@@ -5,28 +5,43 @@ const getreview = async (req, res) => {
   try {
     const email = req.body.email;
     const restaurantid = req.body.restaurantid;
-    // console.log(email)
-    DB.query(`SELECT * FROM reviews WHERE restaurant_id = '${restaurantid}'`, (error, result) => {
-      if (error) {
-        res.status(400).json({
-          error: true,
-          message: "database error",
-        });
-      } else {
-        if (result.length > 0) {
-          const review = result[0];// Access the first item in the result array
-          res.status(200).json({
-            error: false,
-            data: review,
-          });
-        } else {
-          res.status(200).json({
-            error: false,
-            data: null, // Return null if no restaurant found
-          });
+    
+    const query1 = new Promise((resolve, reject) => {
+      DB.query(
+        `SELECT * FROM reviews WHERE restaurant_id = '${restaurantid}'`,
+        (error, result) => {
+          if (error) {
+            res.status(400).json({
+              error: true,
+              message: "database error",
+            });
+          } else {
+            resolve(result[0]);
+          }
         }
-      }
+        );
+      });
+      
+    console.log(req.body)
+    const query2 = new Promise((resolve, reject) => {
+      DB.query(
+        `SELECT COUNT(*) AS count FROM orders WHERE user_email = '${email}' AND restaurant_id = '${restaurantid}'`,
+        (error, result) => {
+          if (error) {
+            reject(error);
+          } else {
+            resolve(result[0].count);
+          }
+        }
+      );
     });
+    const [data1, data2] = await Promise.all([query1, query2]);
+    res.status(200).json({
+        error : false,
+        data : data1,
+        count : data2
+    })
+
 
 } catch (error) {
   res.status(404).json({
