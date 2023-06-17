@@ -16,6 +16,31 @@ pool.getConnection((err, connection) => {
   }
   console.log("Connected to the database");
 
+
+  // let sql = `create table reviews(
+  //   restaurant_id int primary key,
+  //   review varchar(2000)
+  // );`
+
+  // const review = [
+  //   {
+  //     author: 'John Doe',
+  //     review: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac turpis non dolor dignissim accumsan. Nulla facilisi. Sed euismod justo vel aliquet finibus.',
+  //   },
+  //   {
+  //     author: 'Jane Smith',
+  //     review: 'Suspendisse potenti. In iaculis nulla in metus commodo, sit amet congue leo blandit. Sed a felis gravida, mattis nisi eget, venenatis erat.',
+  //   },
+  //   {
+  //     author: 'David Johnson',
+  //     review: 'Curabitur ac ligula nec lorem efficitur vulputate. Integer vitae ultrices mauris. Aliquam sodales ipsum ut malesuada pellentesque.',
+  //   },
+  // ];
+
+  // const jsonreview = JSON.stringify(review);
+  // let sql =`insert into reviews (restaurant_id,review) values (3,'${jsonreview}');`
+
+
   // const av = [{
   //   '10:00 AM': 0,
   //   '12:00 PM': 12,
