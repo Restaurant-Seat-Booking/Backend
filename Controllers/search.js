@@ -27,7 +27,7 @@ const getRestaurantByName = async (req, res) => {
 const getRestaurantByLocation = async (req, res) => {
     const latitude = req.body.lat;
     const longitude = req.body.lng;
-    const radius = 500;
+    const radius = 10;
     // console.log({latitude,longitude});
     try {
         const qery = `
