@@ -16,7 +16,6 @@ pool.getConnection((err, connection) => {
   }
   console.log("Connected to the database");
 
-
   // let sql = `create table reviews(
   //   restaurant_id int primary key,
   //   review varchar(2000)
