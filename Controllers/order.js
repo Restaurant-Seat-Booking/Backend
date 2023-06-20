@@ -1,6 +1,5 @@
 const DB = require("../db");
 
-
 const getorders = async(req,res)=>{
     try {
         const email = req.body.email;

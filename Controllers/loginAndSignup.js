@@ -21,6 +21,7 @@ const login = async (req,res)=>{
                     })
                 }
             }else {
+                console.log(result)
                 res.json({ 
                     error : true ,
                     message: "User does not exit Please signup." 
@@ -38,10 +39,11 @@ const signUp = async (req,res)=>{
         const userEmail = req.body.email;
         const userPassword = req.body.password;
         const userPhone = req.body.phone;
+        const userrole = req.body.role
         // console.log(req.body)
 
-        const query = `INSERT INTO users (user_email,user_name, user_password, phone_number) VALUES 
-                                        ('${userEmail}', '${userName}','${userPassword}','${userPhone}')`;
+        const query = `INSERT INTO users (user_email,user_name, user_password, phone_number, role, isok) VALUES 
+                                        ('${userEmail}', '${userName}','${userPassword}','${userPhone}','${userrole}',false)`;
 
         DB.query(query, (err, result) => {
         if (err) {
