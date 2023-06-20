@@ -2,7 +2,38 @@ const DB = require("../../db");
 
 const addRestaurant = async(req,res)=>{
     try {
+        const restaurantid = req.body.myrestaurant_id;
+        console.log(restaurantid);
+        const name = req.body.restaurantData.name;
+        const openingTime = req.body.restaurantData.openingTime;
+        const closingTime = req.body.restaurantData.closingTime;
+        const latitude = req.body.restaurantData.latitude;
+        const longitude = req.body.restaurantData.longitude;
+        const address = req.body.restaurantData.address;
+        const images = req.body.restaurantData.images;
+
         console.log(req.body.restaurantData)
+
+        DB.query(
+            `INSERT INTO restaurant (restaurant_id, restaurant_name, opening_time, closing_time, latiude, longitude, address, image)
+            VALUES ('${restaurantid}', '${name}', '${openingTime}', '${closingTime}', '${latitude}', '${longitude}', '${address}', '${images}');
+            `,
+            (error, result) => {
+              if (error) {
+                res.status(400).json({
+                  error: true,
+                  message: "database error",
+                });
+              } else {
+                res.status(200).json({
+                  error: false,
+                  message: "updated successfully",
+                });
+              }
+            }
+          );
+
+        
     } catch (error) {
         res.status(404).json({
             error : true,
@@ -11,4 +42,37 @@ const addRestaurant = async(req,res)=>{
     }
 }
 
-module.exports  = addRestaurant;
+
+const isAdded = async (req, res) => {
+    try {
+      const restaurantid = req.body.myrestaurant_id;
+  
+      DB.query(
+        `SELECT restaurant_id
+        FROM restaurant
+        WHERE restaurant_id = '${restaurantid}';`,
+        (error, result) => {
+          if (error) {
+            res.status(400).json({
+              error: true,
+              message: "database error",
+            });
+          } else {
+            const isPresent = result.length > 0; // Check if any rows were returned
+            res.status(200).json({
+              error: false,
+              message: isPresent ? 1 : 0,
+              isPresent: isPresent, // Include a flag indicating if the restaurant_id is present or not
+            });
+          }
+        }
+      );
+    } catch (error) {
+      res.status(404).json({
+        error: true,
+        message: "server error",
+      });
+    }
+  };
+  
+module.exports  = {addRestaurant,isAdded};

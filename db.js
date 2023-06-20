@@ -16,6 +16,8 @@ pool.getConnection((err, connection) => {
   }
   console.log("Connected to the database");
 
+  
+
 
   // let sql = `update restaurant set restaurant_id =12 where restaurant_name = "LLRKharagpur";`
   // let sql = `create table reviews(
