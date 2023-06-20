@@ -17,10 +17,7 @@ pool.getConnection((err, connection) => {
   console.log("Connected to the database");
 
 
-  // let sql = `create table reviews(
-  //   restaurant_id int primary key,
-  //   review varchar(2000)
-  // );`
+  // let sql = `update restaurant set restaurant_id =12 where restaurant_name = "LLRKharagpur";`
 
   // const review = [
   //   {

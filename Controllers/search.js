@@ -40,7 +40,7 @@ const getRestaurantByLocation = async (req, res) => {
       `;
         
         DB.query(qery, (error, result) => {
-            console.log("ok")
+            // console.log("ok")
             if (error) {
                 res.status(400).json({
                     error: true,
