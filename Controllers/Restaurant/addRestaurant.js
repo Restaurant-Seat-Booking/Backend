@@ -3,6 +3,7 @@ const DB = require("../../db");
 const addRestaurant = async(req,res)=>{
     try {
         const restaurantid = req.body.myrestaurant_id;
+        console.log("okkkk")
         console.log(restaurantid);
         const name = req.body.restaurantData.name;
         const openingTime = req.body.restaurantData.openingTime;
@@ -50,7 +51,7 @@ const addRestaurant = async(req,res)=>{
 const isAdded = async (req, res) => {
     try {
       const restaurantid = req.body.myrestaurant_id;
-  
+        // console.log("ooo")
       DB.query(
         `SELECT restaurant_id
         FROM restaurant
@@ -64,11 +65,17 @@ const isAdded = async (req, res) => {
             
           } else {
             const isPresent = result.length > 0; // Check if any rows were returned
-            res.status(200).json({
-              error: false,
-              message: isPresent ? "rest is pres" : "not pres",
-              isPresent: isPresent, // Include a flag indicating if the restaurant_id is present or not
-            });
+            if(result.length>0){
+              res.status(200).json({
+                error : false,
+                isAdded : true
+              })
+            }else{
+              res.status(200).json({
+                error : false,
+                isAdded : false
+              })
+            }
           }
         }
       );

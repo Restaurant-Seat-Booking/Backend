@@ -10,6 +10,7 @@ const login = async (req,res)=>{
             if (result && result.length > 0) {
                 const databasePassword = result[0].user_password;
                 if(password==databasePassword){
+                    console.log(result)
                     res.status(200).json({
                         error : false,
                         data : result
@@ -56,6 +57,7 @@ const signUp = async (req,res)=>{
             } else {
                 // Handle other database errors
                 // console.log(err)
+                console.log(err)
                 res.status(500).json({ 
                     error : true,
                     err : err,
@@ -71,6 +73,7 @@ const signUp = async (req,res)=>{
             });
         });
     } catch (error) {
+        console.log(error)
         res.status(404).json({
             error : true,
             message : "server error"
