@@ -14,6 +14,11 @@ const pool = mysql.createConnection(process.env.DATABASE_URL)
 console.log('Connected to PlanetScale!')
 
 
+// let sql = `create table reviews(
+//   restaurant_id int,
+//   review varchar(1000)
+// );`
+
 // let sql =`CREATE TABLE users (
 //   user_email VARCHAR(100) UNIQUE,
 //   user_name VARCHAR(100),
@@ -150,6 +155,7 @@ console.log('Connected to PlanetScale!')
 //   // VALUES ('LLRKharagpur', '10:40AM', '08:30PM', '${jsonav}', 'nehru hall of residence', 22.3214, 87.3028, 'bohot bahiyaad hotel', '${jsonfeat}', '${jsonitm}', '${jsonimg}');
 //   // `
 
+
 // 
   // let sql = `UPDATE restaurant
   //          SET features = '${jsonfeat}'
@@ -187,4 +193,4 @@ console.log('Connected to PlanetScale!')
 //   connection.release(); // Release the connection back to the pool
 // });
 
-// module.exports = pool
+module.exports = pool
