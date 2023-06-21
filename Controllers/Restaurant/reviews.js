@@ -23,7 +23,7 @@ const getreview = async (req, res) => {
         );
       });
       
-    console.log(req.body)
+    // console.log(req.body)
     const query2 = new Promise((resolve, reject) => {
       DB.query(
         `SELECT COUNT(*) AS count FROM orders WHERE user_email = '${email}' AND restaurant_id = '${restaurantid}'`,

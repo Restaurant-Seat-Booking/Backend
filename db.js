@@ -18,6 +18,24 @@ console.log('Connected to PlanetScale!')
 //   restaurant_id int,
 //   review varchar(1000)
 // );`
+// let items = ["roti","sabji"]
+//   const jsonString = JSON.stringify(items);
+//   let sql=`INSERT INTO orders (date, restaurant_name, location, total_spent, user_email, restaurant_id, items) 
+//   VALUES ('2023-06-14 7:14', 'gadad', 'ramgard', 40, 'nav@123', 1, '${jsonString}');
+//   `
+// date, restaurant_name, location, total_spent, user_email, restaurant_id, items
+// let sql=`create table orders (
+//   order_id int auto_increment primary key,
+//   date datetime,
+//   restaurant_name varchar(100),
+//   location varchar(200),
+//   total_spent int,
+//   user_email varchar(100),
+//   restaurant_id int,
+//   items varchar(1000)
+// );`
+
+
 
 // let sql =`CREATE TABLE users (
 //   user_email VARCHAR(100) UNIQUE,
@@ -47,6 +65,8 @@ console.log('Connected to PlanetScale!')
 //                                         ('ved@gmail.com', 'ved prakash','123','98985659','manager',false)`;
 
 // // let sql=`insert into users set (user_email,user_name,password,phone_number,manager,isok) values ("ved@gmail.com",)`
+// let sql = `insert into reviews  (restaurant_id) values (1) ;`
+
 // pool.query(sql,(err)=>{
 //     if(err) throw err
 //     console.log("Inserted into Table")

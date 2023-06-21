@@ -16,6 +16,28 @@ const addRestaurant = async(req,res)=>{
         console.log(req.body.restaurantData)
 
         DB.query(
+          `INSERT INTO reviews (restaurant_id )
+          VALUES ('${restaurantid}');
+          `,
+          (error, result) => {
+            if (error) {
+              console.log(error)
+              res.status(400).json({
+
+                error: true,
+                message: "database error",
+              });
+            } else {
+              // console.log("hello")
+              res.status(200).json({
+                error: false,
+                message: "updated successfully",
+              });
+            }
+          }
+        );
+
+        DB.query(
             `INSERT INTO restaurant (restaurant_id, restaurant_name, opening_time, closing_time, latiude, longitude, address, image)
             VALUES ('${restaurantid}', '${name}', '${openingTime}', '${closingTime}', '${latitude}', '${longitude}', '${address}', '${images}');
             `,
@@ -28,7 +50,7 @@ const addRestaurant = async(req,res)=>{
                   message: "database error",
                 });
               } else {
-                console.log("hello")
+                // console.log("hello")
                 res.status(200).json({
                   error: false,
                   message: "updated successfully",
@@ -36,6 +58,8 @@ const addRestaurant = async(req,res)=>{
               }
             }
           );
+
+
 
         
     } catch (error) {

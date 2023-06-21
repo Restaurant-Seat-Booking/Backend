@@ -10,7 +10,7 @@ const login = async (req,res)=>{
             if (result && result.length > 0) {
                 const databasePassword = result[0].user_password;
                 if(password==databasePassword){
-                    console.log(result)
+                    // console.log(result)
                     res.status(200).json({
                         error : false,
                         data : result
@@ -22,7 +22,7 @@ const login = async (req,res)=>{
                     })
                 }
             }else {
-                console.log(result)
+                // console.log(result)
                 res.json({ 
                     error : true ,
                     message: "User does not exit Please signup." 
