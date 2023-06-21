@@ -46,7 +46,7 @@ const addRestaurant = async(req,res)=>{
 const isAdded = async (req, res) => {
     try {
       const restaurantid = req.body.myrestaurant_id;
-  
+        // console.log("ooo")
       DB.query(
         `SELECT restaurant_id
         FROM restaurant
@@ -59,9 +59,11 @@ const isAdded = async (req, res) => {
             });
           } else {
             const isPresent = result.length > 0; // Check if any rows were returned
+            console.log(result.length)
+            
             res.status(200).json({
               error: false,
-              message: isPresent ? 1 : 0,
+              message: isPresent ? "Restaradsf" : "SDSDSD",
               isPresent: isPresent, // Include a flag indicating if the restaurant_id is present or not
             });
           }
