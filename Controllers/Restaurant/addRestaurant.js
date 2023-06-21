@@ -20,11 +20,14 @@ const addRestaurant = async(req,res)=>{
             `,
             (error, result) => {
               if (error) {
+                console.log(error)
                 res.status(400).json({
+
                   error: true,
                   message: "database error",
                 });
               } else {
+                console.log("hello")
                 res.status(200).json({
                   error: false,
                   message: "updated successfully",
@@ -35,6 +38,7 @@ const addRestaurant = async(req,res)=>{
 
         
     } catch (error) {
+      console.log(error);
         res.status(404).json({
             error : true,
             message : "server error"
@@ -57,11 +61,12 @@ const isAdded = async (req, res) => {
               error: true,
               message: "database error",
             });
+            
           } else {
             const isPresent = result.length > 0; // Check if any rows were returned
             res.status(200).json({
               error: false,
-              message: isPresent ? 1 : 0,
+              message: isPresent ? "rest is pres" : "not pres",
               isPresent: isPresent, // Include a flag indicating if the restaurant_id is present or not
             });
           }

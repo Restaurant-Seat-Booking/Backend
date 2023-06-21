@@ -55,6 +55,7 @@ const signUp = async (req,res)=>{
                 });
             } else {
                 // Handle other database errors
+                // console.log(err)
                 res.status(500).json({ 
                     error : true,
                     err : err,
