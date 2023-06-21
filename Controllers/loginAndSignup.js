@@ -4,9 +4,9 @@ const login = async (req,res)=>{
     try {
         const email = req.body.email;
         const password = req.body.password;
-
+        // console.log(req.body)
         DB.query(`select * from users where user_email = '${email}'`,(err,result)=>{
-            // console.log(result)
+            console.log(result)
             if (result && result.length > 0) {
                 const databasePassword = result[0].user_password;
                 if(password==databasePassword){
@@ -30,7 +30,7 @@ const login = async (req,res)=>{
             }
         })
     } catch (error) {
-        res.Status(404).json({message : "server error"});
+        res.status(404).json({message : "server error"});
     }
 }
 
