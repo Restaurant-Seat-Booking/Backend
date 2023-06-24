@@ -12,6 +12,7 @@ const addRestaurant = async(req,res)=>{
         const longitude = req.body.restaurantData.longitude;
         const address = req.body.restaurantData.address;
         const images = req.body.restaurantData.images;
+        const jsonimages = JSON.stringify(images);
 
         console.log(req.body.restaurantData)
 
@@ -39,7 +40,7 @@ const addRestaurant = async(req,res)=>{
 
         DB.query(
             `INSERT INTO restaurant (restaurant_id, restaurant_name, opening_time, closing_time, latiude, longitude, address, image)
-            VALUES ('${restaurantid}', '${name}', '${openingTime}', '${closingTime}', '${latitude}', '${longitude}', '${address}', '${images}');
+            VALUES ('${restaurantid}', '${name}', '${openingTime}', '${closingTime}', '${latitude}', '${longitude}', '${address}', '${jsonimages}');
             `,
             (error, result) => {
               if (error) {
