@@ -2,6 +2,7 @@ const DB = require("../../db");
 
 const addRestaurant = async(req,res)=>{
     try {
+      
         const restaurantid = req.body.myrestaurant_id;
         console.log("okkkk")
         console.log(restaurantid);

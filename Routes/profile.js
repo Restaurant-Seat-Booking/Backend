@@ -7,4 +7,5 @@ profileRoutes.post("/profile",getprofile);
 profileRoutes.post("/profileupdate", getprofileupdate);
 
 
+
 module.exports = profileRoutes;

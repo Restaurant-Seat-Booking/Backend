@@ -27,11 +27,11 @@ const getRestaurantByName = async (req, res) => {
 const getRestaurantByLocation = async (req, res) => {
     const latitude = req.body.lat;
     const longitude = req.body.lng;
-    const radius = 10;
+    const radius = 500;
     // console.log({latitude,longitude});
     try {
         const qery = `
-        SELECT restaurant_name, latiude, longitude, address, restaurant_id,opening_time,closing_time,
+        SELECT restaurant_name, latiude, longitude, address, restaurant_id,opening_time,closing_time,image,
           (6371 * acos(cos(radians(${latitude})) * cos(radians(latiude)) * cos(radians(longitude) - radians(${longitude})) + sin(radians(${latitude})) * sin(radians(latiude))))
           AS distance
         FROM restaurant

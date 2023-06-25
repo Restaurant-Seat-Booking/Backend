@@ -7,4 +7,5 @@ queryRoutes.post("/contact",getquery);
 
 
 
+
 module.exports = queryRoutes;

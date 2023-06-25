@@ -13,6 +13,7 @@ const getquery = async (req, res) => {
         });
       } else {
        
+        
           res.status(200).json({
             error: false,
             message: "Your query has been submitted, we will resolve your query as soon as possible", // Return null if no restaurant found

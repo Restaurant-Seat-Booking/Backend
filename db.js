@@ -64,6 +64,7 @@ console.log('Connected to PlanetScale!')
 // const sql = `INSERT INTO users (user_email,user_name, user_password, phone_number, role, isok) VALUES 
 //                                         ('ved@gmail.com', 'ved prakash','123','98985659','manager',false)`;
 
+
 // // let sql=`insert into users set (user_email,user_name,password,phone_number,manager,isok) values ("ved@gmail.com",)`
 // let sql = `insert into reviews  (restaurant_id) values (1) ;`
 

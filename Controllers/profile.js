@@ -31,6 +31,7 @@ const getprofile = async (req, res) => {
 
     const [data1, data2] = await Promise.all([query1, query2]);
 
+    
     res.status(200).json({
       error: false,
       data1: data1,

@@ -120,5 +120,6 @@ const getreviewpost = async (req, res) => {
       });
     }
   };
+  
 
 module.exports = {getreview,getuser,getreviewpost};

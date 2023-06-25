@@ -9,4 +9,5 @@ addResRoutes.post("/addRes",addRestaurant);
 addResRoutes.post("/isAdded",isAdded);
 
 
+
 module.exports = addResRoutes;
