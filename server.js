@@ -22,14 +22,18 @@ const order = require("./Routes/orders")
 const about = require("./Routes/Res_about")
 const review = require("./Routes/review")
 const profile = require("./Routes/profile")
+const contact = require("./Routes/contact")
 const search = require("./Routes/serach")
-const AddRes = require("./Routes/addRes")
+const AddRes = require("./Routes/addRes");
+// const { default: Contact } = require("../Frontend/src/Pages/contact");
+
 
 app.use("/api/userLogin",userLogin);
 app.use("/api/order",order)
 app.use("/api/about",about)
 app.use("/api/review",review)
 app.use("/api/profile",profile)
+app.use("/api/contact",contact)
 app.use("/api/search",search)
 app.use("/api/addRes",AddRes)
 
