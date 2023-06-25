@@ -12,7 +12,7 @@ const getRestaurantByName = async (req, res) => {
                     message : "database error",
                 })
             }else{
-                console.log(result)
+                // console.log(result)
                 res.status(200).json({
                     error : false,
                     data : result

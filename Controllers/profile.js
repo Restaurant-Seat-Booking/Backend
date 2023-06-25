@@ -37,7 +37,7 @@ const getprofile = async (req, res) => {
       data2: data2,
     });
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     res.status(404).json({
       error: true,
       message: "server error",
