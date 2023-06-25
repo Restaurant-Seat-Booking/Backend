@@ -4,8 +4,8 @@ const addRestaurant = async(req,res)=>{
     try {
       
         const restaurantid = req.body.myrestaurant_id;
-        console.log("okkkk")
-        console.log(restaurantid);
+        // console.log("okkkk")
+        // console.log(restaurantid);
         const name = req.body.restaurantData.name;
         const openingTime = req.body.restaurantData.openingTime;
         const closingTime = req.body.restaurantData.closingTime;
@@ -15,7 +15,7 @@ const addRestaurant = async(req,res)=>{
         const images = req.body.restaurantData.images;
         const jsonimages = JSON.stringify(images);
 
-        console.log(req.body.restaurantData)
+        // console.log(req.body.restaurantData)
 
         DB.query(
           `INSERT INTO reviews (restaurant_id )
@@ -23,7 +23,7 @@ const addRestaurant = async(req,res)=>{
           `,
           (error, result) => {
             if (error) {
-              console.log(error)
+              // console.log(error)
               res.status(400).json({
 
                 error: true,
@@ -45,7 +45,7 @@ const addRestaurant = async(req,res)=>{
             `,
             (error, result) => {
               if (error) {
-                console.log(error)
+                // console.log(error)
                 res.status(400).json({
 
                   error: true,
@@ -65,7 +65,7 @@ const addRestaurant = async(req,res)=>{
 
         
     } catch (error) {
-      console.log(error);
+      // console.log(error);
         res.status(404).json({
             error : true,
             message : "server error"
