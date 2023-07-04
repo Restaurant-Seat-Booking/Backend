@@ -118,12 +118,12 @@ console.log('Connected to PlanetScale!')
 //   // let sql =`insert into reviews (restaurant_id,review) values (3,'${jsonreview}');`
 
 
-//   // const av = [{
-//   //   '10:00 AM': 0,
-//   //   '12:00 PM': 12,
-//   //   '2:00 PM': 13,
-//   //   '4:00 PM': 14
-//   // }];
+  // const av = [{
+  //   '10:00 AM': 12,
+  //   '12:00 PM': 0,
+  //   '2:00 PM': 13,
+  //   '4:00 PM': 14
+  // }];
 
 //   // const feat = [
 //   //   {
@@ -167,20 +167,20 @@ console.log('Connected to PlanetScale!')
 //   //   { url: './images/food3.jpg', alt: 'Image 3' },
 //   // ];
 
-//   // const jsonav = JSON.stringify(av);
+  // const jsonav = JSON.stringify(av);
 //   // const jsonfeat = JSON.stringify(feat);
 //   // const jsonitm = JSON.stringify(itm);
 //   // const jsonimg = JSON.stringify(img);
 
-//   // let sql = `INSERT INTO restaurant (restaurant_name, opening_time, closing_time, available_seats, address, latiude, longitude, about_us, features, items, image)
-//   // VALUES ('LLRKharagpur', '10:40AM', '08:30PM', '${jsonav}', 'nehru hall of residence', 22.3214, 87.3028, 'bohot bahiyaad hotel', '${jsonfeat}', '${jsonitm}', '${jsonimg}');
-//   // `
+  // let sql = `INSERT INTO restaurant (restaurant_name, opening_time, closing_time, available_seats, address, latiude, longitude, about_us, features, items, image)
+  // VALUES ('LLRKharagpur', '10:40AM', '08:30PM', '${jsonav}', 'nehru hall of residence', 22.3214, 87.3028, 'bohot bahiyaad hotel', '${jsonfeat}', '${jsonitm}', '${jsonimg}');
+  // `
 
 
 // 
   // let sql = `UPDATE restaurant
-  //          SET features = '${jsonfeat}'
-  //          WHERE restaurant_id = 9;
+  //          SET available_seats = '${jsonav}'
+  //          WHERE restaurant_id = 4 ;
   //         `;
 
 
@@ -206,10 +206,10 @@ console.log('Connected to PlanetScale!')
 //   // VALUES ('2023-06-14 7:14PM', 'apna Restaurant', 'ramgard', 40, 'vedprakash@gmail.com', 3, '${jsonString}');
 //   // `
 
-//   // pool.query(sql,(err)=>{
-//   //   if(err) throw err
-//   //   console.log("Inserted into Table")
-//   // })
+  // pool.query(sql,(err)=>{
+  //   if(err) throw err
+  //   console.log("Inserted into Table")
+  // })
 
 //   connection.release(); // Release the connection back to the pool
 // });

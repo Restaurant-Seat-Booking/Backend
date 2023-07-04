@@ -26,6 +26,41 @@ const getorders = async(req,res)=>{
     }
 }
 
+const updateorder = async(req,res)=>{
+  try {
+      const email = req.body.email;
+      const resname = req.body.resname;
+      const location = req.body.reslocation;
+      const date = req.body.currentDate;
+      const totalAmount=req.body.totalAmount;
+      const restaurant_id = req.body.restaurant_id;
+      const jsonitems = JSON.stringify(req.body.jsonitems);
+      console.log(req.body)
+      DB.query(`insert into orders (restaurant_name,location,total_spent,user_email,restaurant_id,items)
+                values ('${resname}','${location}','${totalAmount}','${email}','${restaurant_id}','${jsonitems}');`, (error, result)=>{
+          // console.log(e)
+          if(error){
+            console.log(error)
+              res.status(400).json({
+                  error : true,
+                  message : "database error",
+              })
+          }else{
+            console.log("ok")
+              res.status(200).json({
+                  error : false,
+                  message: "updated successfully"
+              })
+          }
+      })
+  } catch (error) {
+      res.status(404).json({
+          error : true,
+          message : "server error"
+      })
+  }
+}
+
 const placeOrder = async(req, res)=>{
   try {
     // console.log(req.body);
@@ -54,4 +89,4 @@ const placeOrder = async(req, res)=>{
 }
 
 
-module.exports = {getorders,placeOrder};
+module.exports = {getorders,placeOrder,updateorder};
