@@ -3,9 +3,8 @@ const DB = require("../db");
 
 const getquery = async (req, res) => {
   try {
-    const userid = req.body.email;
-    const query = req.body.query;
-    DB.query(`insert into queries (user_email,query) values ('${userid}', '${query}')`, (error, result) => {
+    
+    DB.query(`insert into queries (user_email,query) values ('${req.body.email}', '${req.body.query}')`, (error, result) => {
       if (error) {
         res.status(400).json({
           error: true,
