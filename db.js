@@ -5,6 +5,9 @@ const pool = mysql.createConnection(process.env.DATABASE_URL)
 console.log('Connected to PlanetScale!')
 
 
+
+
+
 // let sql = `create table reviews(
 //   restaurant_id int,
 //   review varchar(1000)
