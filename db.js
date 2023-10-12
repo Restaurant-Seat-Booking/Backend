@@ -1,13 +1,4 @@
 const { json } = require("body-parser");
-// const mysql = require("mysql");
-
-// const pool = mysql.createPool({
-//   connectionLimit: 10, // Maximum number of connections in the pool
-//   host: "sql12.freesqldatabase.com",
-//   user: "sql12625954",
-//   password: "lNZwT2ExDA",
-//   database: "sql12625954",
-// });
 require('dotenv').config()
 const mysql = require('mysql2')
 const pool = mysql.createConnection(process.env.DATABASE_URL)
